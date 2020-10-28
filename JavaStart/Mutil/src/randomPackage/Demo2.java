@@ -18,12 +18,31 @@ public class Demo2 {
 
         System.out.println("请输入你猜的数字(0~99)：");
         int printNum = sc.nextInt();
-        while (finalNum!=printNum){
+       /* while (finalNum!=printNum){
             result(finalNum,printNum);
+            printNum = sc.nextInt();
         }
 
-
         System.out.println("恭喜你，猜对了！最终数字是："+finalNum);
+*/
+       /*给它加一个次数限制*/
+
+       for (int i = 0; i <2 ; i++) {
+           if(finalNum!=printNum){
+               result(finalNum,printNum);
+               printNum = sc.nextInt();
+           }else {
+               System.out.println("游戏结束，你赢了，数字是："+finalNum);
+               System.out.println("你一共猜了"+i+"次");
+           }
+       }
+
+       System.out.println("游戏结束，你输了，最终数字是："+finalNum);
+
+
+
+
+
 
     }
 
@@ -31,11 +50,9 @@ public class Demo2 {
         if(printNum>finalNum){
             System.out.println("猜大了，再猜");
             System.out.println("请输入你猜的数字(0~99)：");
-            printNum = sc.nextInt();
         }else if(printNum<finalNum){
             System.out.println("猜小了，再猜");
             System.out.println("请输入你猜的数字(0~99)：");
-            printNum = sc.nextInt();
         }
     }
 
